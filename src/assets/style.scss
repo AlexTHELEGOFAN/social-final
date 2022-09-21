@@ -1,0 +1,453 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+
+html {
+  font-family: 'Roboto', sans-serif;
+  background-color: #dcfaff;
+}
+
+// HEADER -------------------------------------
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5rem; /* Hauteur du container */
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+
+  justify-content: space-between;
+
+  .header-logo {
+    display: block;
+    padding-left: 16px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #000000;
+  }
+
+  nav {
+    a {
+      padding-right: 50px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #000000;
+    }
+  }
+}
+
+// BARRE NAV GAUCHE -------------------------------------
+.sidebar {
+  height: 100%;
+  width: 200px;
+  top: 5rem;
+  left: 0;
+  padding-top: 10px;
+  background: #181d49;
+  position: fixed;
+
+  a {
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+// CONTENU DE PAGE (toute les pages) -------------------------------------
+.page-position {
+  margin-left: 200px;
+  height: 100%;
+
+  .page-content {
+    margin-left: 100px;
+    margin-right: auto;
+    width: 1300px;
+  }
+}
+
+// CONTENU DE PAGE SANS SIDEBAR (creation, login) -------------------------------------
+.page-position-no-sidebar {
+  text-align: center;
+  height: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// PAGE HOME -------------------------------------
+
+.home-page {
+  h1 {
+    font-size: 24px;
+    color: #181d49;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .home-functions {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding-bottom: 10px;
+
+    // .searchbar {
+    //   input {
+    //     background-color: rgb(255, 255, 255);
+    //     border-radius: 15px;
+    //     padding: 5px 10px;
+    //     border-style: none;
+    //     color: #000000;
+    //     font-size: 14px;
+    //     box-shadow: 1px 1px 5px black;
+    //     margin-right: 30px;
+    //   }
+    //   .search-field {
+    //     background-color: rgb(255, 255, 255);
+    //     border-radius: 15px;
+    //     padding: 5px 10px;
+    //     border-style: none;
+    //     color: #000000;
+    //     font-size: 14px;
+    //     box-shadow: 1px 1px 5px black;
+    //     cursor: pointer;
+    //   }
+    // }
+
+    //   .export {
+    //     align-items: end;
+    //     background-color: red;
+    //     border-radius: 15px;
+    //     padding: 5px 10px;
+    //     border-style: none;
+    //     color: #ffffff;
+    //     font-size: 14px;
+    //     font-weight: bold;
+    //     cursor: pointer;
+    //   }
+
+    //   .create-user {
+    //     background-color: red;
+    //     border-radius: 15px;
+    //     padding: 5px 10px;
+    //     border-style: none;
+    //     color: #ffffff;
+    //     font-size: 14px;
+    //     font-weight: bold;
+    //     margin-left: 30px;
+    //     cursor: pointer;
+    //   }
+    // }
+
+    // table {
+    //   margin-top: 10px;
+    //   border-collapse: collapse;
+    //   margin-left: auto;
+    //   margin-right: auto;
+
+    //   thead {
+    //     tr {
+    //       background-color: #ffffff;
+
+    //       th,
+    //       td {
+    //         padding: 8px 8px;
+    //         padding-right: 200px;
+    //         font-size: 20px;
+    //         color: #000000;
+    //         border: 1px solid rgb(99, 99, 99);
+    //       }
+    //     }
+    //   }
+    //   tbody {
+    //     tr {
+    //       background-color: #f4f4f4;
+
+    //       td {
+    //         padding: 8px;
+    //         font-size: 20px;
+    //         color: #000000;
+    //         border: 1px solid rgb(99, 99, 99);
+    //       }
+
+    //       .actions {
+    //         text-align: center;
+
+    //         button {
+    //           margin: 5px;
+    //           cursor: pointer;
+    //         }
+    //       }
+    //     }
+    //   }
+  }
+}
+
+.no-users {
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  p {
+    font-size: 20px;
+    color: #e62a2a;
+    font-weight: bold;
+  }
+}
+
+// PAGE CREATION -------------------------------------
+
+.create-user-page {
+  h1 {
+    font-size: 24px;
+    color: #181d49;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  form {
+    .form-field {
+      padding: 5px 10px;
+      .form__input {
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        padding: 5px 10px;
+        border-style: none;
+        color: #000000;
+        font-size: 18px;
+        box-shadow: 1px 1px 5px black;
+        margin-right: 30px;
+      }
+    }
+
+    .buttons {
+      padding-top: 25px;
+      align-items: center;
+
+      .cancel-button {
+        font-weight: bold;
+        font-size: 18px;
+        color: red;
+        padding-right: 50px;
+        background-color: rgba(255, 255, 255, 0);
+        border-style: none;
+        cursor: pointer;
+      }
+
+      .submit-button {
+        background-color: red;
+        border-radius: 15px;
+        padding: 5px 10px;
+        border-style: none;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// PAGE DETAILS
+
+.details-page {
+  h1 {
+    font-size: 24px;
+    color: #181d49;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .cancel-button {
+    font-weight: bold;
+    font-size: 18px;
+    padding-right: 50px;
+    border-style: none;
+    cursor: pointer;
+    text-decoration: none;
+
+    a:-webkit-any-link {
+      text-decoration: none;
+      color: red;
+    }
+  }
+
+  .infos {
+    text-align: center;
+    p {
+      font-size: 20px;
+      color: #181d49;
+      padding-top: 15px;
+      padding-bottom: 25px;
+    }
+
+    .form__modify {
+      background-color: rgb(255, 255, 255);
+      border-radius: 15px;
+      padding: 5px 10px;
+      border-style: none;
+      color: #000000;
+      font-size: 18px;
+      box-shadow: 1px 1px 5px black;
+      margin-left: 30px;
+      width: 300px;
+    }
+
+    .ok-button {
+      margin-top: 10px;
+      margin-right: 10px;
+      background-color: red;
+      border-radius: 15px;
+      padding: 5px 10px;
+      border-style: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+
+      a:-webkit-any-link {
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// PAGE LOGIN -------------------------------------
+
+.login-page {
+  h1 {
+    font-size: 24px;
+    color: #181d49;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .submit-button {
+    background-color: red;
+    border-radius: 15px;
+    padding: 5px 10px;
+    border-style: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  form {
+    .form-field {
+      padding: 5px 10px;
+      .form__input {
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        padding: 5px 10px;
+        border-style: none;
+        color: #000000;
+        font-size: 14px;
+        box-shadow: 1px 1px 5px black;
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+// PAGE STATISTIQUES -------------------------------------
+
+.stats-page {
+  h1 {
+    font-size: 24px;
+    color: #181d49;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .home-functions {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding-bottom: 10px;
+
+    .searchbar {
+      input {
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        padding: 5px 10px;
+        border-style: none;
+        color: #000000;
+        font-size: 14px;
+        box-shadow: 1px 1px 5px black;
+        margin-right: 30px;
+      }
+      .search-field {
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        padding: 5px 10px;
+        border-style: none;
+        color: #000000;
+        font-size: 14px;
+        box-shadow: 1px 1px 5px black;
+        cursor: pointer;
+      }
+    }
+
+    .create-user {
+      background-color: red;
+      border-radius: 15px;
+      padding: 5px 10px;
+      border-style: none;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+
+    thead {
+      tr {
+        background-color: #ffffff;
+
+        th,
+        td {
+          padding: 8px 8px;
+          padding-right: 200px;
+          font-size: 20px;
+          color: #000000;
+          border: 1px solid rgb(99, 99, 99);
+        }
+      }
+    }
+    tbody {
+      tr {
+        background-color: #f4f4f4;
+
+        td {
+          padding: 8px;
+          font-size: 20px;
+          color: #000000;
+          border: 1px solid rgb(99, 99, 99);
+
+          button {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+// PAGE ERREUR -------------------------------------
+.error {
+  margin-top: 7rem;
+  color: rgb(0, 0, 0);
+  font-size: 42px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
