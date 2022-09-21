@@ -39,7 +39,7 @@ function CreateUser() {
       })
       .catch(function (error) {
         console.log(error);
-        toast.error(`L'addresse mail existe déjà`);
+        toast.error(`L'adresse mail existe déjà !`);
       });
   };
 
@@ -137,6 +137,3 @@ function CreateUser() {
 }
 
 export default CreateUser;
-
-// navigate('/');
-//         localStorage.setItem('access_token', response.data.data.access_token);

@@ -18,7 +18,6 @@ import { Toaster, toast } from 'react-hot-toast';
 
 // import UseAuthContext from '../context/UseAuthContext';
 import SideBar from '../../components/SideBar';
-import moment from 'moment';
 import setAuthToken from '../context/setAuthToken';
 
 // PAGE HOME QUI AFFICHE TOUT LES UTILISATEURS
@@ -26,127 +25,6 @@ import setAuthToken from '../context/setAuthToken';
 
 const Home = () => {
   const navigate = useNavigate();
-  // const initialRows = [
-  //   {
-  //     id: 1,
-  //     first_name: 'Harnold',
-  //     last_name: 'Choizhaienestguerre',
-  //     email: 'harnold.choizhaienestguerre@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 2,
-  //     first_name: 'Schaimecédine',
-  //     last_name: 'Ivrahimobitch',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '03/01/2006',
-  //     updated_at: '01/01/2011',
-  //     status: true,
-  //   },
-  //   {
-  //     id: 3,
-  //     first_name: 'Lannister',
-  //     last_name: 'Jaime',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '03/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: true,
-  //   },
-  //   {
-  //     id: 4,
-  //     first_name: 'vc',
-  //     last_name: 'Arya',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 5,
-  //     first_name: 'Targaryen',
-  //     last_name: 'Daenerys',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 6,
-  //     first_name: 'Melisandre',
-  //     last_name: 'f',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 7,
-  //     first_name: 'Clifford',
-  //     last_name: 'Ferrara',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 8,
-  //     first_name: 'Frances',
-  //     last_name: 'Rossini',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 9,
-  //     first_name: 'Roxie',
-  //     last_name: 'Harvey',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 10,
-  //     first_name: 'Frances',
-  //     last_name: 'Harvey',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 11,
-  //     first_name: 'Roxie',
-  //     last_name: 'Harvey',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2001',
-  //     updated_at: '01/01/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 12,
-  //     first_name: 'Frances',
-  //     last_name: 'Harvey',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2010',
-  //     updated_at: '01/09/2011',
-  //     status: false,
-  //   },
-  //   {
-  //     id: 13,
-  //     first_name: 'Roxie',
-  //     last_name: 'Harvey',
-  //     email: 'alexandre.pozzi@gmail.com',
-  //     created_at: '01/01/2002',
-  //     updated_at: '01/01/2012',
-  //     status: false,
-  //   },
-  // ];
-
-  // const [rows, setRows] = useState(initialRows);
 
   // GESTION DE STATE DE USER ---------------------------------------------
 
@@ -154,7 +32,6 @@ const Home = () => {
   const [numberOfPages, setNumberOfPages] = useState([]);
   const [pageSizeDB, setPageSizeDB] = useState([]);
   const [totalOfRows, setTotalOfRows] = useState([]);
-  // const [pageNumber, setPageNumber] = useState(2);
 
   const fetchUser = (pageNumber = 1) => {
     axios
@@ -280,20 +157,7 @@ const Home = () => {
 
   // CREATION D'UNE NOUVELLE LIGNE ---------------------------------------------
   const handleNewClick = () => {
-    const key = Math.floor(Math.random() * 10000000);
-    let creation = moment().format('MM-DD-YYYY');
-    setUser((oldRows) => [
-      ...oldRows,
-      {
-        id: key,
-        first_name: '',
-        last_name: '',
-        email: '',
-        created_at: creation,
-        updated_at: creation,
-        banned_at: creation,
-      },
-    ]);
+    navigate(`/creation`);
   };
 
   // BARRE D'OUTIL AVEC AJOUT D'USER

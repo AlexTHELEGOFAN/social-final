@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import SideBar from '../../components/SideBar';
 import Chart from 'react-google-charts';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
-import UseAuthContext from '../context/UseAuthContext';
 
 // PAGE STATISTIQUES QUI AFFICHE UN GRAPHIQUE
 // GET

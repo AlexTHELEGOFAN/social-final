@@ -18,6 +18,7 @@ function Details() {
     first_name: '',
     last_name: '',
     email: '',
+    created_at: '',
     banned_at: '',
   });
   const [editing, setEditing] = useState(false);
@@ -103,11 +104,12 @@ function Details() {
           <h1>Informations de l'utilisateur : {user.id}</h1>
           <div className='infos'>
             <form>
-              <div>
+              <p>
                 <label htmlFor='firstName'>Prénom : </label>
                 {editing ? (
                   <input
                     name='first_name'
+                    className='form__modify'
                     onChange={handleInputChange}
                     value={formUpdate.first_name}
                     placeholder="Prénom d'utilisateur"
@@ -116,13 +118,14 @@ function Details() {
                 ) : (
                   <span>{formUpdate.first_name}</span>
                 )}
-              </div>
+              </p>
 
-              <div>
+              <p>
                 <label htmlFor='last_name'>Nom : </label>
                 {editing ? (
                   <input
                     name='last_name'
+                    className='form__modify'
                     onChange={handleInputChange}
                     value={formUpdate.last_name}
                     placeholder="Nom d'utilisateur"
@@ -131,13 +134,14 @@ function Details() {
                 ) : (
                   <span>{formUpdate.last_name}</span>
                 )}
-              </div>
+              </p>
 
-              <div>
+              <p>
                 <label htmlFor='email'>Email : </label>
                 {editing ? (
                   <input
                     name='email'
+                    className='form__modify'
                     onChange={handleInputChange}
                     value={formUpdate.email}
                     placeholder='Email'
@@ -146,25 +150,62 @@ function Details() {
                 ) : (
                   <span>{formUpdate.email}</span>
                 )}
-              </div>
+              </p>
 
-              <div>
-                <label htmlFor='banned_at'>Banni : </label>
+              <p>
+                <label htmlFor='created_at'>Créé le : </label>
                 {editing ? (
                   <input
-                    name='banned_at'
-                    type='checkbox'
+                    name='created_at'
+                    className='form__modify'
                     onChange={handleInputChange}
-                    value={
-                      formUpdate.banned_at
-                        ? 'false'
-                        : moment().format('MM-DD-YYYY')
-                    }
+                    value={formUpdate.created_at}
+                    placeholder='Date de création'
+                    required='required'
                   />
+                ) : (
+                  <span>{moment(formUpdate.created_at).format('DD-MM-YYYY')}</span>
+                )}
+              </p>
+
+              <p>
+                <label htmlFor='created_at'>Mis à jour le : </label>
+                {editing ? (
+                  <input
+                    name='updated_at'
+                    className='form__modify'
+                    onChange={handleInputChange}
+                    value={formUpdate.updated_at}
+                    placeholder='Date de mise à jour'
+                    required='required'
+                  />
+                ) : (
+                  <span>{moment(formUpdate.updated_at).format('DD-MM-YYYY')}</span>
+                )}
+              </p>
+
+              <p>
+                <label htmlFor='banned_at'>Statut : </label>
+                {editing ? (
+                  <>
+                    <label>Changer le statut</label>
+                    <input
+                      name='banned_at'
+                      type='checkbox'
+                      onChange={handleInputChange}
+                      value={
+                        formUpdate.banned_at
+                          ? `L'utilisateur n'est pas banni.`
+                          : `L'utilisateur est actuellement banni depuis le ${moment().format(
+                              'MM-DD-YYYY'
+                            )}.`
+                      }
+                    />
+                  </>
                 ) : (
                   <span>{formUpdate.banned_at}</span>
                 )}
-              </div>
+              </p>
 
               <button className='cancel-button' onClick={Alert}>
                 <Link to='/home'>Annuler</Link>
