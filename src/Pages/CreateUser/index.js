@@ -47,8 +47,8 @@ function CreateUser() {
   const Alert = () => {
     let text = 'Attention ! Les modifications seront perdues.';
     window.confirm(text) === true
-      ? (window.location.href = '/home')
-      : navigate('/home');
+      ? navigate('/home')
+      : window.close();
   };
 
   //

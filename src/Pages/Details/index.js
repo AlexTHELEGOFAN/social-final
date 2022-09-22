@@ -88,9 +88,7 @@ function Details() {
   // ALERTE SI USER CLIQUE SUR ANNULER ---------------------------------------------
   const Alert = () => {
     let text = 'Attention ! Les modifications seront perdues.';
-    window.confirm(text) === true
-      ? (window.location.href = '/home')
-      : navigate('/home');
+    window.confirm(text) === true ? navigate('/home') : window.close();
   };
 
   // CONTENU AFFICHÉ SI BANNI EST NULL  ---------------------------------------------
@@ -164,7 +162,9 @@ function Details() {
                     required='required'
                   />
                 ) : (
-                  <span>{moment(formUpdate.created_at).format('DD-MM-YYYY')}</span>
+                  <span>
+                    {moment(formUpdate.created_at).format('DD-MM-YYYY')}
+                  </span>
                 )}
               </p>
 
@@ -180,7 +180,9 @@ function Details() {
                     required='required'
                   />
                 ) : (
-                  <span>{moment(formUpdate.updated_at).format('DD-MM-YYYY')}</span>
+                  <span>
+                    {moment(formUpdate.updated_at).format('DD-MM-YYYY')}
+                  </span>
                 )}
               </p>
 
