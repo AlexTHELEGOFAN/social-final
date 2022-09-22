@@ -19,19 +19,20 @@ import { Toaster, toast } from 'react-hot-toast';
 // import UseAuthContext from '../context/UseAuthContext';
 import SideBar from '../../components/SideBar';
 import setAuthToken from '../context/setAuthToken';
+import moment from 'moment';
 
 // PAGE HOME QUI AFFICHE TOUT LES UTILISATEURS
 // GET
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  // GESTION DE STATE DE USER ---------------------------------------------
-
   const [user, setUser] = useState([]);
   const [numberOfPages, setNumberOfPages] = useState([]);
   const [pageSizeDB, setPageSizeDB] = useState([]);
   const [totalOfRows, setTotalOfRows] = useState([]);
+  
+  const navigate = useNavigate();
+  
+  const {t} = useTranslation()
 
   const fetchUser = (pageNumber = 1) => {
     axios
@@ -113,12 +114,20 @@ const Home = () => {
       headerName: 'Mis à jour le',
       type: 'date',
       width: 130,
+      valueFormatter: (value) => {
+        moment().format('LLLL')
+      }
     },
     {
       field: 'banned_at',
       headerName: 'Banni',
       type: 'date',
       width: 75,
+      renderCell: (row) => {
+        <span>
+          {row.value ? t('banned') : t('notBanned')}
+        </span>
+      }
     },
     {
       field: 'actions',

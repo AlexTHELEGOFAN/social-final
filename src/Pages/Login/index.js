@@ -27,12 +27,18 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [login, setLogin] = useState(false);
 
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  });
+
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
 
     // APPEL API
     // fetch('http://localhost/login');
+
     axios
       .post('http://localhost/login', {
         email,
